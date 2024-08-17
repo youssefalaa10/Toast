@@ -5,11 +5,11 @@ const ToastContainer: React.FC = () => {
   const { toasts } = useToast();
 
   return (
-    <div className="fixed bottom-0 right-0 p-6 space-y-4">
+    <div className="fixed bottom-0 right-0 p-6 rounded-full space-y-4">
       {toasts.map((toast) => (
         <div
           key={toast.id}
-          className={`toast-item p-4 rounded shadow-lg text-white ${
+          className={`toast-item rounded-full flex justify-between items-center w-full  mt-2 p-4  shadow-lg text-white ${
             toast.type === "success"
               ? "bg-green-500"
               : toast.type === "error"
@@ -18,6 +18,7 @@ const ToastContainer: React.FC = () => {
           }`}
         >
           {toast.message}
+          <i className="pi pi-times"></i>
         </div>
       ))}
     </div>
